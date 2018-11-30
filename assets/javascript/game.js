@@ -17,30 +17,48 @@ $(".losers").text('Losses: ' + losses);
 $("#cryImg1").on("click", function(){
     var crystal1 = numberOptions[0];
     $(".totalScoreText2").text(counter += crystal1);
-    counter += crystal1;
+    game();
 });
 
 $("#cryImg2").on("click", function(){
     var crystal2 = numberOptions[1];
     $(".totalScoreText2").text(counter += crystal2);
+    game();
 });
 
 $("#cryImg3").on("click", function(){
     var crystal3 = numberOptions[2];
     $(".totalScoreText2").text(counter += crystal3);
+    game();
 });
 
 $("#cryImg4").on("click", function(){
     var crystal4 = numberOptions[3];
     $(".totalScoreText2").text(counter += crystal4);
+    game();
 });
 
-if(counter === startGameNum){
-    wins++;
-    startGameNum;
+
+function reset(){
+    startGameNum = Math.floor(Math.random() * 120) + 19;
 }
 
-if(counter > startGameNum){
-    losses++;
-    startGameNum;
-}
+function game(){
+    if(counter === startGameNum){      
+        wins++;
+        $(".winners").text('Wins: ' + wins);
+        reset();
+        $(".neededScore").text('Target Score: ' + startGameNum);
+        counter = 0;
+        $(".totalScoreText2").text("0");
+        alert("You won");
+    } else if(counter > startGameNum){
+        losses++;
+        $(".losers").text('Losses: ' + losses);
+        reset();
+        $(".neededScore").text('Target Score: ' + startGameNum);
+        counter = 0;
+        $(".totalScoreText2").text("0");
+        alert("You lose");
+    }
+};
