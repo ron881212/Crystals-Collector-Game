@@ -11,6 +11,7 @@
     width: 500px;
     height: 400px;
     margin: 10px;
+    line-height: 1.5;
 }
 
 .text{
@@ -47,18 +48,18 @@
 
 .totalScoreText {
     background-color: aqua;
-    width: 300px;
+    width: 320px;
     height: 40px;
     margin: 10px;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 .totalScoreText2 {
     background-color: aqua;
-    width: 300px;
+    width: 320px;
     height: 100px;
     margin: 10px;
-    font-size: 25px;
+    font-size: 50px;
 }
 
 body {
